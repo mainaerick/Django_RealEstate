@@ -7,9 +7,6 @@ from django.utils.translation import gettext_lazy as _
 
 from .managers import CustomUserManager
 
-
-from django.db import models
-
 # Create your models here.
 
 

@@ -9,4 +9,4 @@ class ProfileAdmin(admin.ModelAdmin):
     list_display_links = ["id", "pkid", "user"]
 
 
-admin.site.register(Profile, ProfileAdmin) 
+admin.site.register(Profile, ProfileAdmin)

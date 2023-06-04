@@ -13,4 +13,3 @@ class ProfileJSONRenderer(JSONRenderer):
             return super(ProfileJSONRenderer, self).render(data)
 
         return json.dumps({"profile": data})
- 
