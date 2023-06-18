@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import HomePage from "./pages/HomePage";
 import PropertiesPage from "./pages/PropertiesPage";
+import NotFound from "./components/NotFound";
 const App = () => {
   return (
     <>
@@ -14,15 +15,15 @@ const App = () => {
         <main className="py-3">
           <Routes>
             <Route path="/" element={<HomePage />}></Route>
-          </Routes>
-
-          <Routes>
             <Route path="/properties" element={<PropertiesPage />}></Route>{" "}
+						<Route path="*" element={<NotFound />} />
+
           </Routes>
+          <ToastContainer/>
+
         </main>
         <Footer/>
       </Router>
-      <ToastContainer/>
     </>
   );
 };

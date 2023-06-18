@@ -4,6 +4,7 @@ import Spinner from "../components/Spinner";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { getProperties } from "../features/properties/propertySlice";
+import Property from "../components/Property";
 
 const PropertiesPage = () => {
   const { properties, isLoading, isError, message } = useSelector(
@@ -18,10 +19,9 @@ const PropertiesPage = () => {
     dispatch(getProperties());
   }, [dispatch, isError, message]);
 
-
   if (isLoading) {
-		return <Spinner />;
-	}
+    return <Spinner />;
+  }
   return (
     <div>
       <Container>
@@ -31,7 +31,17 @@ const PropertiesPage = () => {
             <hr className="hr-text" />
           </Col>
         </Row>
-        {}
+        {
+          <>
+            <Row className="mt-3">
+              {properties.map((property) => (
+                <Col key={property.id} sm={12} md={6} lg={4} xl={3}>
+                  <Property property={property} />
+                </Col>
+              ))}
+            </Row>
+          </>
+        }
       </Container>
     </div>
   );
