@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { getProperties } from "../features/properties/propertySlice";
 import Property from "../components/Property";
-
+import Title from "../components/Title";
 const PropertiesPage = () => {
   const { properties, isLoading, isError, message } = useSelector(
     (state) => state.properties
@@ -23,7 +23,9 @@ const PropertiesPage = () => {
     return <Spinner />;
   }
   return (
-    <div>
+    <>
+			<Title title="Our Properties Catalog"  />
+
       <Container>
         <Row>
           <Col className="mg-top text-center">
@@ -43,7 +45,7 @@ const PropertiesPage = () => {
           </>
         }
       </Container>
-    </div>
+    </>
   );
 };
 
