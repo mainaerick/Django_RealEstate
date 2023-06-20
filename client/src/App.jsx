@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import HomePage from "./pages/HomePage";
 import PropertiesPage from "./pages/PropertiesPage";
 import NotFound from "./components/NotFound";
+import LoginPage  from "./pages/LoginPage";
 const App = () => {
   return (
     <>
@@ -16,6 +17,8 @@ const App = () => {
           <Routes>
             <Route path="/" element={<HomePage />}></Route>
             <Route path="/properties" element={<PropertiesPage />}></Route>{" "}
+            <Route path="/login" element={<LoginPage />} />
+
 						<Route path="*" element={<NotFound />} />
 
           </Routes>
